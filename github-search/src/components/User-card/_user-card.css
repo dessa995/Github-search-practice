@@ -6,12 +6,16 @@
 
 .user-card__box {
   display: flex;
-  padding: 48px;
+  padding: 46px 47px 40px;
   background-color: #fefefe;
+  border-radius: 8px;
+  -webkit-box-shadow: 0px 7px 36px -21px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 7px 36px -21px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 7px 36px -21px rgba(0, 0, 0, 0.5);
 }
 
 .user-card__img-box {
-  margin-right: 15px;
+  margin-right: 35px;
 }
 
 .user-card__info-box {
@@ -22,4 +26,132 @@
 .user-card__base-info-box {
   display: flex;
   flex-wrap: wrap;
+}
+
+.user-card__name {
+  font-size: 24px;
+  margin-top: -2px;
+  letter-spacing: 0.9px;
+}
+
+.user-card__join-date {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  font-size: 15px;
+  color: #697c9a;
+  letter-spacing: -0.2px;
+  margin-left: -27px;
+}
+
+.user-card__username {
+  color: #0079ff;
+  text-decoration: none;
+  text-align: start;
+  margin-top: 3px;
+  letter-spacing: -0.2px;
+
+  &:visited {
+    color: #0079ff;
+  }
+}
+
+.user-card__description-box {
+  margin-top: 20px;
+}
+
+.user-card__description {
+  font-size: 15px;
+  color: #4b6a9b;
+  letter-spacing: -0.2px;
+  line-height: 24px;
+}
+
+.user-card__file-info-box {
+  display: flex;
+  width: 470px;
+  height: 85px;
+  background-color: #f6f8ff;
+  margin-top: 31px;
+  padding: 14px 30px;
+}
+
+.user-card__user-info-box {
+  width: 33%;
+
+  &:last-of-type {
+    padding-left: 18px;
+  }
+}
+
+.user-card__info-heading {
+  font-size: 13px;
+  color: #4b6a9b;
+  font-weight: 100;
+}
+
+.user-card__info-number {
+  font-size: 22px;
+  color: #2b3442;
+  font-weight: bold;
+  padding: 1px;
+}
+
+.user-card__user-links-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 500px;
+  margin-top: 35px;
+  margin-left: -3px;
+}
+
+.user-card__link-box {
+  display: flex;
+  height: 35px;
+  width: 46%;
+
+  &:nth-of-type(even) {
+    margin-right: 0;
+  }
+}
+
+.user-card__link-icon {
+  font-size: 20px;
+  width: 20px;
+  margin-right: 15px;
+}
+
+.user-card__link-icon--office {
+  font-size: 28px;
+}
+
+.user-card__link-icon--link {
+  font-size: 28px;
+  margin-top: 2px;
+  margin-left: 2px;
+}
+
+.user-card__link-text {
+  font-size: 15px;
+  color: #4b6a9b;
+}
+
+.user-card__link-text--github-url {
+  text-decoration: none;
+  transition: 350ms ease-in-out;
+  line-height: 33px;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.user-card__link-text--github-username {
+  text-decoration: none;
+  transition: 350ms ease-in-out;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }

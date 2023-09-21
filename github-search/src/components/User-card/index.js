@@ -44,24 +44,31 @@ const index = () => {
               </div>
               <div className="user-card__user-links-box">
                 <div className="user-card__link-box">
-                  <ImLocation />
-                  <p className="user-card__town">San Francisco</p>
+                  <ImLocation className="user-card__link-icon user-card__link-icon--pin" />
+                  <p className="user-card__link-text user-card__link-text--town">
+                    San Francisco
+                  </p>
                 </div>
                 <div className="user-card__link-box">
-                  <BsTwitter />
-                  <p className="user-card__twitter-url">Not Available</p>
+                  <BsTwitter className="user-card__link-icon user-card__link-icon--twitter" />
+                  <p className="user-card__link-text user-card__link-text--twitter">
+                    Not Available
+                  </p>
                 </div>
                 <div className="user-card__link-box">
-                  <ImLink />
-                  <a href="#" className="user-card__url">
+                  <ImLink className="user-card__link-icon user-card__link-icon--link" />
+                  <a
+                    href="#"
+                    className="user-card__link-text user-card__link-text--github-url"
+                  >
                     https://github.blog
                   </a>
                 </div>
                 <div className="user-card__link-box">
-                  <HiMiniBuildingOffice2 />
+                  <HiMiniBuildingOffice2 className="user-card__link-icon user-card__link-icon--office" />
                   <a
                     href="https://github.blog"
-                    className="user-card__github-url"
+                    className="user-card__link-text user-card__link-text--github-username"
                   >
                     @github
                   </a>
