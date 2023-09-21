@@ -1,0 +1,25 @@
+.user-card__wrapper {
+  max-width: 730px;
+  padding-right: 14px;
+  margin: 0 auto;
+}
+
+.user-card__box {
+  display: flex;
+  padding: 48px;
+  background-color: #fefefe;
+}
+
+.user-card__img-box {
+  margin-right: 15px;
+}
+
+.user-card__info-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-card__base-info-box {
+  display: flex;
+  flex-wrap: wrap;
+}
