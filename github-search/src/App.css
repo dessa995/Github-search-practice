@@ -3,6 +3,11 @@
 
 body {
   background-color: #f6f8ff;
+  transition: 350ms ease-in-out;
+
+  &.dark {
+    background-color: #141d2f;
+  }
 }
 
 .row {

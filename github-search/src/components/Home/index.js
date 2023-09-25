@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import { RiMoonFill } from "react-icons/ri";
 import { LuSearch } from "react-icons/lu";
+import { BsFillSunFill } from "react-icons/bs";
 
 import SearchCard from "../User-card";
 
@@ -8,6 +9,7 @@ const Index = () => {
   const [search, setSearch] = useState("");
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalContent, setModalContent] = useState("No results");
+  const [isDark, setIsDark] = useState(false);
 
   const openModal = () => {
     if (search.trim().length < 1) {
@@ -29,18 +31,50 @@ const Index = () => {
     console.log(modalIsOpen + " modal is");
   };
 
+  const toggleDark = () => {
+    setIsDark(!isDark);
+    document.body.classList.toggle("dark");
+  };
+
   return (
     <>
       <header>
         <div className="header__box">
-          <h1 className="header__app-heading">devfinder</h1>
-          <button type="button" className="header__theme-toggle-btn">
-            Dark <RiMoonFill className="header__btn-icon" />
-          </button>
+          <h1
+            className={
+              isDark ? "header__app-heading dark" : "header__app-heading"
+            }
+          >
+            devfinder
+          </h1>
+          {isDark ? (
+            <button
+              type="button"
+              className="header__theme-toggle-btn dark"
+              onClick={toggleDark}
+            >
+              Light
+              <BsFillSunFill className="header__btn-icon dark" />
+            </button>
+          ) : (
+            <button
+              type="button"
+              className="header__theme-toggle-btn"
+              onClick={toggleDark}
+            >
+              Dark
+              <RiMoonFill className="header__btn-icon" />
+            </button>
+          )}
         </div>
       </header>
       <section className="input-section">
-        <form className="input-section__form" onSubmit={handleSubmit}>
+        <form
+          className={
+            isDark ? "input-section__form dark" : "input-section__form"
+          }
+          onSubmit={handleSubmit}
+        >
           <div className="input-section__input-box">
             <div className="input-section__search-icon-box">
               <LuSearch className="input-section__search-icon" />
@@ -49,7 +83,11 @@ const Index = () => {
               type="text"
               name="search"
               id="search"
-              className="input-section__search-bar"
+              className={
+                isDark
+                  ? "input-section__search-bar dark"
+                  : "input-section__search-bar"
+              }
               placeholder={`Search GitHub username…`}
               onChange={(e) => setSearch(e.target.value)}
             />
@@ -60,7 +98,7 @@ const Index = () => {
           </button>
         </form>
       </section>
-      <SearchCard />
+      <SearchCard isDark={isDark} />
     </>
   );
 };

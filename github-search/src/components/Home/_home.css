@@ -3,6 +3,13 @@ header {
   margin: 141px auto 20px;
 }
 
+@media only screen and (max-width: 768px) {
+  header {
+    max-width: 580px;
+    margin: 136px auto 20px;
+  }
+}
+
 .header__box {
   display: flex;
   justify-content: space-between;
@@ -10,6 +17,17 @@ header {
 
 .header__app-heading {
   font-size: 26px;
+  transition: 350ms ease-in-out;
+
+  &.dark {
+    color: #fff;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .header__app-heading {
+    font-size: 25px;
+  }
 }
 
 .header__theme-toggle-btn {
@@ -27,9 +45,22 @@ header {
   color: #697c9a;
   transition: 350ms ease-in-out;
 
+  @media only screen and (max-width: 768px) {
+    margin-right: 12px;
+    margin-top: 6px;
+  }
+
   &:hover {
     cursor: pointer;
     color: #222731;
+  }
+
+  &.dark {
+    color: #fff;
+
+    &:hover {
+      color: #90a4d4;
+    }
   }
 }
 
@@ -40,6 +71,14 @@ header {
 
   .header__theme-toggle-btn:hover > & {
     color: #222731;
+  }
+
+  &.dark {
+    color: #fff;
+
+    .header__theme-toggle-btn.dark:hover > & {
+      color: #90a4d4;
+    }
   }
 }
 
@@ -53,6 +92,13 @@ header {
   padding-right: 15px;
 }
 
+@media only screen and (max-width: 768px) {
+  .input-section {
+    max-width: 580px;
+    padding-right: 24px;
+  }
+}
+
 .input-section__form {
   display: flex;
   justify-content: space-between;
@@ -60,9 +106,14 @@ header {
   background-color: #fefefe;
   padding: 9px;
   border-radius: 8px;
+  transition: 350ms ease-in-out;
   -webkit-box-shadow: 0px 7px 36px -21px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 7px 36px -21px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 7px 36px -21px rgba(0, 0, 0, 0.5);
+
+  &.dark {
+    background-color: #1e2a47;
+  }
 }
 
 .input-section__input-box {
@@ -82,6 +133,19 @@ header {
   outline: none;
   font-size: 18px;
   letter-spacing: -0.2px;
+  transition: 350ms ease-in-out;
+
+  &.dark {
+    background-color: #1e2a47;
+    color: #fff;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .input-section__search-bar {
+    font-size: 17px;
+    letter-spacing: 0.2px;
+  }
 }
 
 .input-section__btn {

@@ -2,6 +2,7 @@
   max-width: 730px;
   padding-right: 14px;
   margin: 0 auto;
+  margin-bottom: 120px;
 }
 
 .user-card__box {
@@ -9,9 +10,14 @@
   padding: 46px 47px 40px;
   background-color: #fefefe;
   border-radius: 8px;
+  transition: 350ms ease-in-out;
   -webkit-box-shadow: 0px 7px 36px -21px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 7px 36px -21px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 7px 36px -21px rgba(0, 0, 0, 0.5);
+
+  /* &.dark {
+    background-color: #1e2a47;
+  } */
 }
 
 .user-card__img-box {
@@ -32,6 +38,11 @@
   font-size: 24px;
   margin-top: -2px;
   letter-spacing: 0.9px;
+  transition: 350ms ease-in-out;
+
+  /* &.dark {
+    color: #fff;
+  } */
 }
 
 .user-card__join-date {
@@ -42,6 +53,11 @@
   color: #697c9a;
   letter-spacing: -0.2px;
   margin-left: -27px;
+  transition: 350ms ease-in-out;
+
+  /* &.dark {
+    color: #fff;
+  } */
 }
 
 .user-card__username {
@@ -58,6 +74,7 @@
 
 .user-card__description-box {
   margin-top: 20px;
+  transition: 350ms ease-in-out;
 }
 
 .user-card__description {
@@ -65,6 +82,10 @@
   color: #4b6a9b;
   letter-spacing: -0.2px;
   line-height: 24px;
+
+  /* &.dark {
+    color: #fff;
+  } */
 }
 
 .user-card__file-info-box {
@@ -74,6 +95,12 @@
   background-color: #f6f8ff;
   margin-top: 31px;
   padding: 14px 30px;
+  transition: 350ms ease-in-out;
+  border-radius: 8px;
+
+  /* &.dark {
+    background-color: #141d2f;
+  } */
 }
 
 .user-card__user-info-box {
@@ -88,6 +115,11 @@
   font-size: 13px;
   color: #4b6a9b;
   font-weight: 100;
+  transition: 350ms ease-in-out;
+
+  /* &.dark {
+    color: #fff;
+  } */
 }
 
 .user-card__info-number {
@@ -95,6 +127,11 @@
   color: #2b3442;
   font-weight: bold;
   padding: 1px;
+  transition: 350ms ease-in-out;
+
+  /* &.dark {
+    color: #fff;
+  } */
 }
 
 .user-card__user-links-box {
@@ -120,6 +157,15 @@
   font-size: 20px;
   width: 20px;
   margin-right: 15px;
+  transition: 350ms ease-in-out;
+
+  /* &.dark {
+    color: #fff;
+  } */
+
+  /* &.not-available {
+    color: #ffffff4f;
+  } */
 }
 
 .user-card__link-icon--office {
@@ -135,6 +181,15 @@
 .user-card__link-text {
   font-size: 15px;
   color: #4b6a9b;
+  transition: 350ms ease-in-out;
+
+  /* &.dark {
+    color: #fff;
+  } */
+
+  /* &.not-available {
+    color: #ffffff4f;
+  } */
 }
 
 .user-card__link-text--github-url {
