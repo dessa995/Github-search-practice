@@ -10,6 +10,13 @@ header {
   }
 }
 
+@media only screen and (max-width: 375px) {
+  header {
+    max-width: 327px;
+    margin: 30px auto;
+  }
+}
+
 .header__box {
   display: flex;
   justify-content: space-between;
@@ -24,7 +31,7 @@ header {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 376px) and (max-width: 768px) {
   .header__app-heading {
     font-size: 25px;
   }
@@ -45,11 +52,6 @@ header {
   color: #697c9a;
   transition: 350ms ease-in-out;
 
-  @media only screen and (max-width: 768px) {
-    margin-right: 12px;
-    margin-top: 6px;
-  }
-
   &:hover {
     cursor: pointer;
     color: #222731;
@@ -61,6 +63,20 @@ header {
     &:hover {
       color: #90a4d4;
     }
+  }
+}
+
+@media only screen and (min-width: 376px) and (max-width: 768px) {
+  .header__theme-toggle-btn {
+    margin-right: 12px;
+    margin-top: 6px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .header__theme-toggle-btn {
+    padding-right: 0;
+    width: 75px;
   }
 }
 
@@ -92,10 +108,18 @@ header {
   padding-right: 15px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 376px) and (max-width: 768px) {
   .input-section {
     max-width: 580px;
     padding-right: 24px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .input-section {
+    max-width: 327px;
+    padding-right: 0;
+    margin-bottom: 15px;
   }
 }
 
@@ -116,15 +140,33 @@ header {
   }
 }
 
+@media only screen and (max-width: 375px) {
+  .input-section__form {
+    height: 63px;
+  }
+}
+
 .input-section__input-box {
   display: flex;
   width: 65%;
+}
+
+@media only screen and (max-width: 375px) {
+  .input-section__input-box {
+    width: 69%;
+  }
 }
 
 .input-section__search-icon {
   font-size: 28px;
   color: #0079ff;
   margin: 10px 21px;
+}
+@media only screen and (max-width: 375px) {
+  .input-section__search-icon {
+    margin: 10px 5px;
+    font-size: 25px;
+  }
 }
 
 .input-section__search-bar {
@@ -141,10 +183,16 @@ header {
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 376px) and (max-width: 768px) {
   .input-section__search-bar {
     font-size: 17px;
     letter-spacing: 0.2px;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .input-section__search-bar {
+    font-size: 13px;
   }
 }
 
@@ -162,6 +210,14 @@ header {
   &:hover {
     cursor: pointer;
     background-color: #60abff;
+  }
+}
+
+@media only screen and (max-width: 375px) {
+  .input-section__btn {
+    width: 82px;
+    height: 46px;
+    font-size: 13px;
   }
 }
 

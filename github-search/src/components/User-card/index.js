@@ -5,7 +5,7 @@ import { ImLocation, ImLink } from "react-icons/im";
 import { BsTwitter } from "react-icons/bs";
 import { HiMiniBuildingOffice2 } from "react-icons/hi2";
 
-const Index = (isDark) => {
+const Index = ({ isDark }) => {
   console.log(isDark);
 
   const [isAvailable, setisAvailable] = useState(false);
@@ -123,7 +123,7 @@ const Index = (isDark) => {
                 </div>
               </div>
               <div className="user-card__user-links-box">
-                <div className="user-card__link-box">
+                <div className="user-card__link-box user-card__link-box--location">
                   <ImLocation
                     className={
                       isDark
@@ -141,7 +141,7 @@ const Index = (isDark) => {
                     San Francisco
                   </p>
                 </div>
-                <div className="user-card__link-box">
+                <div className="user-card__link-box user-card__link-box--twitter">
                   <BsTwitter
                     className={
                       isDark
@@ -162,7 +162,7 @@ const Index = (isDark) => {
                     Not Available
                   </p>
                 </div>
-                <div className="user-card__link-box">
+                <div className="user-card__link-box user-card__link-box--github-url">
                   <ImLink
                     className={
                       isDark
@@ -181,7 +181,7 @@ const Index = (isDark) => {
                     https://github.blog
                   </a>
                 </div>
-                <div className="user-card__link-box">
+                <div className="user-card__link-box user-card__link-box--github-username">
                   <HiMiniBuildingOffice2
                     className={
                       isDark
