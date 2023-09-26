@@ -49,9 +49,9 @@
 
 .user-card__img-box {
   margin-right: 35px;
-  border-radius: 100%;
 
   & > img {
+    border-radius: 100%;
     max-width: 177px;
     max-height: 117px;
   }
@@ -75,8 +75,6 @@
   display: flex;
   flex-direction: column;
 }
-
-/* @media only screen and (max-width: 375px) {} */
 
 .user-card__base-info-box {
   display: flex;
@@ -399,6 +397,7 @@
   font-size: 15px;
   color: #4b6a9b;
   transition: 350ms ease-in-out;
+  text-decoration: none;
 
   &.dark {
     color: #fff;
@@ -418,6 +417,12 @@
 @media only screen and (max-width: 375px) {
   .user-card__link-text {
     font-size: 13px;
+  }
+}
+
+.user-card__link-text--twitter {
+  &:hover {
+    text-decoration: underline;
   }
 }
 

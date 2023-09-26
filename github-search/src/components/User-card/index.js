@@ -1,14 +1,19 @@
 import React, { useState } from "react";
-import img from "../../assets/temp-files/Oval.png";
+// import img from "../../assets/temp-files/Oval.png";
 
 import { ImLocation, ImLink } from "react-icons/im";
 import { BsTwitter } from "react-icons/bs";
 import { HiMiniBuildingOffice2 } from "react-icons/hi2";
 
-const Index = ({ isDark }) => {
-  console.log(isDark);
-
-  const [isAvailable, setisAvailable] = useState(false);
+const Index = ({ isDark, data }) => {
+  const githubDate = new Date(data.created_at);
+  const createdAt = `${githubDate.getDate()} ${githubDate.toLocaleString(
+    "default",
+    {
+      month: "short",
+    }
+  )} ${githubDate.getFullYear()}`;
+  // console.log(createdAt);
 
   return (
     <>
@@ -16,7 +21,11 @@ const Index = ({ isDark }) => {
         <div className="user-card__wrapper">
           <div className={isDark ? "user-card__box dark" : "user-card__box"}>
             <div className="user-card__img-box">
-              <img src={img} alt="name" className="user-card__avatar" />
+              <img
+                src={data.avatar_url}
+                alt={data.name}
+                className="user-card__avatar"
+              />
             </div>
             <div className="user-card__info-box">
               <div className="user-card__base-info-box row">
@@ -27,7 +36,7 @@ const Index = ({ isDark }) => {
                       : "user-card__name col-6"
                   }
                 >
-                  The Octocat
+                  {data.name}
                 </h2>
                 <p
                   className={
@@ -36,10 +45,10 @@ const Index = ({ isDark }) => {
                       : "user-card__join-date col-6"
                   }
                 >
-                  Joined 25 Jan 2011
+                  {"Joined " + createdAt}
                 </p>
                 <a href="#" className="user-card__username col-6">
-                  @octocat
+                  {data.login}
                 </a>
               </div>
               <div className="user-card__description-box">
@@ -50,8 +59,7 @@ const Index = ({ isDark }) => {
                       : "user-card__description"
                   }
                 >
-                  Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-                  Donec odio. Quisque volutpat mattis eros.
+                  {data.bio ? data.bio : "This profile has no bio"}
                 </p>
               </div>
               <div
@@ -78,7 +86,7 @@ const Index = ({ isDark }) => {
                         : "user-card__info-number"
                     }
                   >
-                    8
+                    {data.public_repos}
                   </p>
                 </div>
                 <div className="user-card__user-info-box">
@@ -98,7 +106,7 @@ const Index = ({ isDark }) => {
                         : "user-card__info-number"
                     }
                   >
-                    3938
+                    {data.followers}
                   </p>
                 </div>
                 <div className="user-card__user-info-box">
@@ -118,7 +126,7 @@ const Index = ({ isDark }) => {
                         : "user-card__info-number"
                     }
                   >
-                    9
+                    {data.following}
                   </p>
                 </div>
               </div>
@@ -138,7 +146,7 @@ const Index = ({ isDark }) => {
                         : "user-card__link-text user-card__link-text--town"
                     }
                   >
-                    San Francisco
+                    {data.location ? data.location : "Not Available"}
                   </p>
                 </div>
                 <div className="user-card__link-box user-card__link-box--twitter">
@@ -149,18 +157,22 @@ const Index = ({ isDark }) => {
                         : "user-card__link-icon user-card__link-icon--twitter"
                     }
                   />
-                  <p
+                  <a
+                    href={
+                      data.twitter_username
+                        ? `https://twitter.com/${data.twitter_username}`
+                        : "javascript:;"
+                    }
                     className={
                       isDark
                         ? "user-card__link-text user-card__link-text--twitter dark"
                         : "user-card__link-text user-card__link-text--twitter"
-                      // isAvailable
-                      //   ? "user-card__link-text user-card__link-text--twitter"
-                      //   : "user-card__link-text user-card__link-text--twitter not-available"
                     }
                   >
-                    Not Available
-                  </p>
+                    {data.twitter_username
+                      ? data.twitter_username
+                      : "Not Available"}
+                  </a>
                 </div>
                 <div className="user-card__link-box user-card__link-box--github-url">
                   <ImLink
@@ -171,14 +183,14 @@ const Index = ({ isDark }) => {
                     }
                   />
                   <a
-                    href="#"
+                    href={data.blog ? data.blog : "javascript:;"}
                     className={
                       isDark
                         ? "user-card__link-text user-card__link-text--github-url dark"
                         : "user-card__link-text user-card__link-text--github-url"
                     }
                   >
-                    https://github.blog
+                    {data.blog ? data.login + "@blog" : "Not Available"}
                   </a>
                 </div>
                 <div className="user-card__link-box user-card__link-box--github-username">
@@ -190,14 +202,14 @@ const Index = ({ isDark }) => {
                     }
                   />
                   <a
-                    href="https://github.blog"
+                    href={data.html_url}
                     className={
                       isDark
                         ? "user-card__link-text user-card__link-text--github-username dark"
                         : "user-card__link-text user-card__link-text--github-username"
                     }
                   >
-                    @github
+                    {data.html_url ? data.login + "@github" : "Not Available"}
                   </a>
                 </div>
               </div>

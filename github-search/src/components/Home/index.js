@@ -1,4 +1,7 @@
 import { React, useState } from "react";
+
+import axios from "axios";
+
 import { RiMoonFill } from "react-icons/ri";
 import { LuSearch } from "react-icons/lu";
 import { BsFillSunFill } from "react-icons/bs";
@@ -8,14 +11,26 @@ import SearchCard from "../User-card";
 const Index = () => {
   const [search, setSearch] = useState("");
   const [modalIsOpen, setModalIsOpen] = useState(false);
-  const [modalContent, setModalContent] = useState("No results");
+  const [modalContent, setModalContent] = useState("");
   const [isDark, setIsDark] = useState(false);
+  const [data, setData] = useState({});
+
+  const getUser = (username) => {
+    axios
+      .get(`https://api.github.com/users/${username.trim()}`)
+      .then((response) => {
+        setData(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+        setModalContent("No Results");
+        openModal();
+      });
+  };
 
   const openModal = () => {
-    if (search.trim().length < 1) {
-      setModalIsOpen(true);
-      setModalContent("please type first");
-    }
+    setModalIsOpen(true);
+
     setTimeout(() => {
       closeModal();
     }, 3000);
@@ -27,8 +42,7 @@ const Index = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    openModal();
-    console.log(modalIsOpen + " modal is");
+    getUser(search);
   };
 
   const toggleDark = () => {
@@ -98,7 +112,7 @@ const Index = () => {
           </button>
         </form>
       </section>
-      <SearchCard isDark={isDark} />
+      {data.name ? <SearchCard isDark={isDark} data={data} /> : ""}
     </>
   );
 };
