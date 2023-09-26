@@ -13,7 +13,7 @@ const Index = () => {
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalContent, setModalContent] = useState("");
   const [isDark, setIsDark] = useState(false);
-  const [data, setData] = useState({});
+  const [data, setData] = useState(null);
 
   const getUser = (username) => {
     axios
@@ -40,9 +40,16 @@ const Index = () => {
     setModalIsOpen(false);
   };
 
+  const handleChange = (e) => {
+    e.preventDefault();
+    setSearch(e.target.value);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     getUser(search);
+    setSearch("");
+    console.log(search);
   };
 
   const toggleDark = () => {
@@ -97,13 +104,14 @@ const Index = () => {
               type="text"
               name="search"
               id="search"
+              value={search}
               className={
                 isDark
                   ? "input-section__search-bar dark"
                   : "input-section__search-bar"
               }
               placeholder={`Search GitHub username…`}
-              onChange={(e) => setSearch(e.target.value)}
+              onChange={(e) => handleChange(e)}
             />
           </div>
           {modalIsOpen ? <Modal modalContent={modalContent} /> : ""}
@@ -112,7 +120,7 @@ const Index = () => {
           </button>
         </form>
       </section>
-      {data.name ? <SearchCard isDark={isDark} data={data} /> : ""}
+      {data ? <SearchCard isDark={isDark} data={data} /> : ""}
     </>
   );
 };

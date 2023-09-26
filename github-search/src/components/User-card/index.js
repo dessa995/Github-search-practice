@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 // import img from "../../assets/temp-files/Oval.png";
 
 import { ImLocation, ImLink } from "react-icons/im";
@@ -47,7 +47,7 @@ const Index = ({ isDark, data }) => {
                 >
                   {"Joined " + createdAt}
                 </p>
-                <a href="#" className="user-card__username col-6">
+                <a href={data.html_url} className="user-card__username col-6">
                   {data.login}
                 </a>
               </div>
@@ -157,22 +157,22 @@ const Index = ({ isDark, data }) => {
                         : "user-card__link-icon user-card__link-icon--twitter"
                     }
                   />
-                  <a
-                    href={
-                      data.twitter_username
-                        ? `https://twitter.com/${data.twitter_username}`
-                        : "javascript:;"
-                    }
-                    className={
-                      isDark
-                        ? "user-card__link-text user-card__link-text--twitter dark"
-                        : "user-card__link-text user-card__link-text--twitter"
-                    }
-                  >
-                    {data.twitter_username
-                      ? data.twitter_username
-                      : "Not Available"}
-                  </a>
+                  {data.twitter_username ? (
+                    <a
+                      href={`https://twitter.com/${data.twitter_username}`}
+                      className={
+                        isDark
+                          ? "user-card__link-text user-card__link-text--twitter dark"
+                          : "user-card__link-text user-card__link-text--twitter"
+                      }
+                    >
+                      {data.twitter_username}
+                    </a>
+                  ) : (
+                    <p className="user-card__link-text user-card__link-text--no-data">
+                      Not Available
+                    </p>
+                  )}
                 </div>
                 <div className="user-card__link-box user-card__link-box--github-url">
                   <ImLink
@@ -182,16 +182,22 @@ const Index = ({ isDark, data }) => {
                         : "user-card__link-icon user-card__link-icon--link"
                     }
                   />
-                  <a
-                    href={data.blog ? data.blog : "javascript:;"}
-                    className={
-                      isDark
-                        ? "user-card__link-text user-card__link-text--github-url dark"
-                        : "user-card__link-text user-card__link-text--github-url"
-                    }
-                  >
-                    {data.blog ? data.login + "@blog" : "Not Available"}
-                  </a>
+                  {data.blog ? (
+                    <a
+                      href={data.blog}
+                      className={
+                        isDark
+                          ? "user-card__link-text user-card__link-text--github-url dark"
+                          : "user-card__link-text user-card__link-text--github-url"
+                      }
+                    >
+                      {data.login + "@blog"}
+                    </a>
+                  ) : (
+                    <p className="user-card__link-text user-card__link-text--no-data">
+                      Not Available
+                    </p>
+                  )}
                 </div>
                 <div className="user-card__link-box user-card__link-box--github-username">
                   <HiMiniBuildingOffice2

@@ -13,7 +13,7 @@
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 610px) {
   .user-card__wrapper {
     max-width: 327px;
     padding-right: 0;
@@ -41,7 +41,7 @@
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 610px) {
   .user-card__box {
     padding: 32px 24px 37px;
   }
@@ -63,7 +63,7 @@
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 610px) {
   .user-card__img-box {
     & > img {
       max-width: 70px;
@@ -94,7 +94,7 @@
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 610px) {
   .user-card__base-info-box {
     margin-top: 4px;
     margin-left: 88px;
@@ -118,7 +118,7 @@
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 610px) {
   .user-card__name {
     font-size: 15px;
     width: fit-content;
@@ -144,11 +144,12 @@
   .user-card__join-date {
     order: 2;
     margin-top: 2px;
-    margin-left: -11px;
+    margin-left: 0;
+    justify-content: flex-start;
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 610px) {
   .user-card__join-date {
     margin-left: 0;
     font-size: 14px;
@@ -175,7 +176,7 @@
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 610px) {
   .user-card__username {
     font-size: 14px;
     margin-top: 0;
@@ -187,7 +188,7 @@
   transition: 350ms ease-in-out;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 610px) {
   .user-card__description-box {
     max-width: 288px;
   }
@@ -211,7 +212,7 @@
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 610px) {
   .user-card__description {
     max-width: 307px;
     margin-top: 14px;
@@ -244,7 +245,7 @@
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 610px) {
   .user-card__file-info-box {
     width: 280px;
     margin-top: 25px;
@@ -261,7 +262,7 @@
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 610px) {
   .user-card__user-info-box {
     display: flex;
     flex-direction: column;
@@ -284,7 +285,7 @@
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 610px) {
   .user-card__info-heading {
     font-size: 12px;
     text-align: center;
@@ -303,7 +304,7 @@
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 610px) {
   .user-card__info-number {
     font-size: 19px;
     margin-top: 5px;
@@ -327,7 +328,7 @@
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 610px) {
   .user-card__user-links-box {
     flex-direction: column;
     flex-wrap: nowrap;
@@ -346,7 +347,7 @@
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 610px) {
   .user-card__link-box {
     width: fit-content;
   }
@@ -414,7 +415,7 @@
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 610px) {
   .user-card__link-text {
     font-size: 13px;
   }
@@ -436,7 +437,7 @@
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 610px) {
   .user-card__link-text--github-url {
     line-height: 24px;
   }

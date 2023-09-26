@@ -10,7 +10,7 @@ header {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 610px) {
   header {
     max-width: 327px;
     margin: 30px auto;
@@ -73,7 +73,7 @@ header {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 610px) {
   .header__theme-toggle-btn {
     padding-right: 0;
     width: 75px;
@@ -115,7 +115,7 @@ header {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 610px) {
   .input-section {
     max-width: 327px;
     padding-right: 0;
@@ -140,7 +140,7 @@ header {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 610px) {
   .input-section__form {
     height: 63px;
   }
@@ -151,7 +151,7 @@ header {
   width: 65%;
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 610px) {
   .input-section__input-box {
     width: 69%;
   }
@@ -162,7 +162,7 @@ header {
   color: #0079ff;
   margin: 10px 21px;
 }
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 610px) {
   .input-section__search-icon {
     margin: 10px 5px;
     font-size: 25px;
@@ -190,7 +190,7 @@ header {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 610px) {
   .input-section__search-bar {
     font-size: 13px;
   }
@@ -213,7 +213,7 @@ header {
   }
 }
 
-@media only screen and (max-width: 375px) {
+@media only screen and (max-width: 610px) {
   .input-section__btn {
     width: 82px;
     height: 46px;
