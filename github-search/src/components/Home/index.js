@@ -1,19 +1,28 @@
-import { React, useState } from "react";
-
+import { React, useState, useContext } from "react";
 import axios from "axios";
 
-import { RiMoonFill } from "react-icons/ri";
-import { LuSearch } from "react-icons/lu";
-import { BsFillSunFill } from "react-icons/bs";
-
-import SearchCard from "../User-card";
+import Header from "../Header";
+import InputSection from "../Input-section";
+import BlankPage from "../Blank-page";
 
 const Index = () => {
-  const [search, setSearch] = useState("");
+  const [isDark, setIsDark] = useState(false);
+  const [showBlank, setShowBlank] = useState(false);
+  const [data, setData] = useState(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalContent, setModalContent] = useState("");
-  const [isDark, setIsDark] = useState(false);
-  const [data, setData] = useState(null);
+
+  const openModal = () => {
+    setModalIsOpen(true);
+
+    setTimeout(() => {
+      closeModal();
+    }, 3000);
+  };
+
+  const closeModal = () => {
+    setModalIsOpen(false);
+  };
 
   const getUser = (username) => {
     axios
@@ -28,109 +37,30 @@ const Index = () => {
       });
   };
 
-  const openModal = () => {
-    setModalIsOpen(true);
-
-    setTimeout(() => {
-      closeModal();
-    }, 3000);
-  };
-
-  const closeModal = () => {
-    setModalIsOpen(false);
-  };
-
-  const handleChange = (e) => {
-    e.preventDefault();
-    setSearch(e.target.value);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    getUser(search);
-    setSearch("");
-    console.log(search);
-  };
-
-  const toggleDark = () => {
-    setIsDark(!isDark);
-    document.body.classList.toggle("dark");
+  const handleNavClick = () => {
+    setShowBlank(true);
+    console.log("show blank is " + showBlank);
   };
 
   return (
     <>
-      <header>
-        <div className="header__box">
-          <h1
-            className={
-              isDark ? "header__app-heading dark" : "header__app-heading"
-            }
-          >
-            devfinder
-          </h1>
-          {isDark ? (
-            <button
-              type="button"
-              className="header__theme-toggle-btn dark"
-              onClick={toggleDark}
-            >
-              Light
-              <BsFillSunFill className="header__btn-icon dark" />
-            </button>
-          ) : (
-            <button
-              type="button"
-              className="header__theme-toggle-btn"
-              onClick={toggleDark}
-            >
-              Dark
-              <RiMoonFill className="header__btn-icon" />
-            </button>
-          )}
-        </div>
-      </header>
-      <section className="input-section">
-        <form
-          className={
-            isDark ? "input-section__form dark" : "input-section__form"
-          }
-          onSubmit={handleSubmit}
-        >
-          <div className="input-section__input-box">
-            <div className="input-section__search-icon-box">
-              <LuSearch className="input-section__search-icon" />
-            </div>
-            <input
-              type="text"
-              name="search"
-              id="search"
-              value={search}
-              className={
-                isDark
-                  ? "input-section__search-bar dark"
-                  : "input-section__search-bar"
-              }
-              placeholder={`Search GitHub username…`}
-              onChange={(e) => handleChange(e)}
-            />
-          </div>
-          {modalIsOpen ? <Modal modalContent={modalContent} /> : ""}
-          <button type="submit" className="input-section__btn">
-            Search
-          </button>
-        </form>
-      </section>
-      {data ? <SearchCard isDark={isDark} data={data} /> : ""}
-    </>
-  );
-};
-
-const Modal = ({ modalContent }) => {
-  return (
-    <>
-      <div className="input-section__modal">
-        <p className="input-section__modal-content">{modalContent}</p>
-      </div>
+      <Header
+        isDark={isDark}
+        setIsDark={setIsDark}
+        setShowBlank={setShowBlank}
+        handleNavClick={handleNavClick}
+      />
+      {!showBlank ? (
+        <InputSection
+          isDark={isDark}
+          getUser={getUser}
+          data={data}
+          modalIsOpen={modalIsOpen}
+          modalContent={modalContent}
+        />
+      ) : (
+        <BlankPage />
+      )}
     </>
   );
 };

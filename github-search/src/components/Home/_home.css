@@ -1,28 +1,28 @@
-header {
+.home-page-top {
   max-width: 730px;
-  margin: 141px auto 20px;
+  margin: 118px auto 20px;
 }
 
 @media only screen and (max-width: 768px) {
-  header {
+  .home-page-top {
     max-width: 580px;
     margin: 136px auto 20px;
   }
 }
 
 @media only screen and (max-width: 610px) {
-  header {
+  .home-page-top {
     max-width: 327px;
     margin: 30px auto;
   }
 }
 
-.header__box {
+.home-page-top__box {
   display: flex;
   justify-content: space-between;
 }
 
-.header__app-heading {
+.home-page-top__app-heading {
   font-size: 26px;
   transition: 350ms ease-in-out;
 
@@ -32,12 +32,12 @@ header {
 }
 
 @media only screen and (min-width: 376px) and (max-width: 768px) {
-  .header__app-heading {
+  .home-page-top__app-heading {
     font-size: 25px;
   }
 }
 
-.header__theme-toggle-btn {
+.home-page-top__theme-toggle-btn {
   display: flex;
   justify-content: space-between;
   height: 20px;
@@ -67,32 +67,32 @@ header {
 }
 
 @media only screen and (min-width: 376px) and (max-width: 768px) {
-  .header__theme-toggle-btn {
+  .home-page-top__theme-toggle-btn {
     margin-right: 12px;
     margin-top: 6px;
   }
 }
 
 @media only screen and (max-width: 610px) {
-  .header__theme-toggle-btn {
+  .home-page-top__theme-toggle-btn {
     padding-right: 0;
     width: 75px;
   }
 }
 
-.header__btn-icon {
+.home-page-top__btn-icon {
   font-size: 24px;
   color: #697c9a;
   transition: 350ms ease-in-out;
 
-  .header__theme-toggle-btn:hover > & {
+  .home-page-top__theme-toggle-btn:hover > & {
     color: #222731;
   }
 
   &.dark {
     color: #fff;
 
-    .header__theme-toggle-btn.dark:hover > & {
+    .home-page-top__theme-toggle-btn.dark:hover > & {
       color: #90a4d4;
     }
   }

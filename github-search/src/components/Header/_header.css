@@ -1,0 +1,30 @@
+.header__nav {
+  max-width: 730px;
+  margin: 10px auto;
+  padding-right: 15px;
+  display: flex;
+  justify-content: flex-end;
+  list-style: none;
+  gap: 20px;
+}
+
+.header__nav-btn {
+  border: none;
+  background-color: transparent;
+  color: #0079ff;
+  font-size: 16px;
+  transition: 350ms ease-in-out;
+
+  &.dark {
+    color: #fff;
+
+    &.dark:hover {
+      color: #90a4d4;
+    }
+  }
+
+  &:hover {
+    cursor: pointer;
+    color: #1e2a47;
+  }
+}

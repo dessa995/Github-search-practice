@@ -1,3 +1,4 @@
+@import "./components/Header/_header.css";
 @import "./components/Home/_home.css";
 @import "./components/User-card/_user-card.css";
 
