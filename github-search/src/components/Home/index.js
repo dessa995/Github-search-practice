@@ -14,10 +14,6 @@ const Index = () => {
 
   const openModal = () => {
     setModalIsOpen(true);
-
-    setTimeout(() => {
-      closeModal();
-    }, 3000);
   };
 
   const closeModal = () => {
@@ -57,6 +53,7 @@ const Index = () => {
           data={data}
           modalIsOpen={modalIsOpen}
           modalContent={modalContent}
+          closeModal={closeModal}
         />
       ) : (
         <BlankPage />

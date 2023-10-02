@@ -1,5 +1,6 @@
 @import "./components/Header/_header.css";
 @import "./components/Home/_home.css";
+@import "./components/Input-section/_input-section.css";
 @import "./components/User-card/_user-card.css";
 
 body {

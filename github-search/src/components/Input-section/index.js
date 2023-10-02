@@ -4,10 +4,18 @@ import SearchCard from "../User-card";
 
 import { LuSearch } from "react-icons/lu";
 
-const Index = ({ isDark, getUser, data, modalIsOpen, modalContent }) => {
+const Index = ({
+  isDark,
+  getUser,
+  data,
+  closeModal,
+  modalIsOpen,
+  modalContent,
+}) => {
   const [search, setSearch] = useState("");
 
   const handleChange = (e) => {
+    closeModal();
     e.preventDefault();
     setSearch(e.target.value);
   };

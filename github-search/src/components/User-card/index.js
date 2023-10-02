@@ -48,7 +48,7 @@ const Index = ({ isDark, data }) => {
                   {"Joined " + createdAt}
                 </p>
                 <a href={data.html_url} className="user-card__username col-6">
-                  {data.login}
+                  @{data.login}
                 </a>
               </div>
               <div className="user-card__description-box">
@@ -139,15 +139,21 @@ const Index = ({ isDark, data }) => {
                         : "user-card__link-icon user-card__link-icon--pin"
                     }
                   />
-                  <p
-                    className={
-                      isDark
-                        ? "user-card__link-text user-card__link-text--town dark"
-                        : "user-card__link-text user-card__link-text--town"
-                    }
-                  >
-                    {data.location ? data.location : "Not Available"}
-                  </p>
+                  {data.location ? (
+                    <p
+                      className={
+                        isDark
+                          ? "user-card__link-text user-card__link-text--town dark"
+                          : "user-card__link-text user-card__link-text--town"
+                      }
+                    >
+                      {data.location}
+                    </p>
+                  ) : (
+                    <p className="user-card__link-text user-card__link-text--no-data">
+                      Not Available
+                    </p>
+                  )}
                 </div>
                 <div className="user-card__link-box user-card__link-box--twitter">
                   <BsTwitter
