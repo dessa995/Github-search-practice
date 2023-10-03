@@ -178,7 +178,7 @@
   width: 46%;
 
   &:nth-of-type(even) {
-    margin-right: 0;
+    margin-right: -15px;
   }
 }
 
@@ -273,6 +273,12 @@
 
     &.row {
       width: 100%;
+    }
+  }
+
+  .user-card__link-box {
+    &:nth-of-type(even) {
+      margin-right: -7px;
     }
   }
 

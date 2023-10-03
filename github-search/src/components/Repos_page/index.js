@@ -16,7 +16,6 @@ const Index = ({ data, reposData, setOpenReposPagePage, isDark }) => {
         <ul className={!isDark ? "repos-page__list" : "repos-page__list dark"}>
           {reposData ? (
             reposData.map((repo) => {
-              console.log(repo);
               return (
                 <li
                   key={repo.id}
