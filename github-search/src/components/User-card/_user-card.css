@@ -9,7 +9,7 @@
   display: flex;
   padding: 46px 47px 40px;
   background-color: #fefefe;
-  border-radius: 8px;
+  border-radius: 15px;
   transition: 350ms ease-in-out;
   -webkit-box-shadow: 0px 7px 36px -21px rgba(0, 0, 0, 0.5);
   -moz-box-shadow: 0px 7px 36px -21px rgba(0, 0, 0, 0.5);

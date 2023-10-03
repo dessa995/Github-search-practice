@@ -2,7 +2,7 @@ import { React, useState, useEffect } from "react";
 
 import Header from "../Header";
 import InputSection from "../Input-section";
-import ReposPage from "../Repos_page";
+import ReposPage from "../repos_page";
 
 // const DataContext = React.createContext();
 
@@ -64,7 +64,7 @@ const Index = () => {
           setOpenReposPagePage={setOpenReposPagePage}
         />
       ) : (
-        <ReposPage reposData={reposData} />
+        <ReposPage data={data} reposData={reposData} />
       )}
     </>
   );

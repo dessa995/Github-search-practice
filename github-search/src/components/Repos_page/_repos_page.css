@@ -2,3 +2,33 @@
   width: 50%;
   margin: 20px auto;
 }
+
+.repos-page__wrapper {
+  display: flex;
+  flex-direction: column;
+  padding: 46px 47px 40px;
+  background-color: #fefefe;
+  border-radius: 15px;
+  transition: 350ms ease-in-out;
+  -webkit-box-shadow: 0px 7px 36px -21px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 7px 36px -21px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 7px 36px -21px rgba(0, 0, 0, 0.5);
+
+  &.dark {
+    background-color: #1e2a47;
+  }
+}
+
+.repos-page__heading {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.repos-page__list {
+  height: 135px;
+  padding: 15px 30px;
+  overflow-y: scroll;
+  background-color: #f6f8ff;
+  list-style: none;
+  margin-bottom: 15px;
+}
