@@ -139,77 +139,110 @@ const Index = ({ isDark, data, getRepos, setOpenReposPagePage }) => {
               </div>
               <div className="user-card__user-links-box">
                 <div className="user-card__link-box user-card__link-box--location">
-                  <ImLocation
-                    className={
-                      isDark
-                        ? "user-card__link-icon user-card__link-icon--pin dark"
-                        : "user-card__link-icon user-card__link-icon--pin"
-                    }
-                  />
                   {data.location ? (
-                    <p
-                      className={
-                        isDark
-                          ? "user-card__link-text user-card__link-text--town dark"
-                          : "user-card__link-text user-card__link-text--town"
-                      }
-                    >
-                      {data.location}
-                    </p>
+                    <>
+                      <ImLocation
+                        className={
+                          isDark
+                            ? "user-card__link-icon user-card__link-icon--pin dark"
+                            : "user-card__link-icon user-card__link-icon--pin"
+                        }
+                      />
+                      <p
+                        className={
+                          isDark
+                            ? "user-card__link-text user-card__link-text--town dark"
+                            : "user-card__link-text user-card__link-text--town"
+                        }
+                      >
+                        {data.location}
+                      </p>
+                    </>
                   ) : (
-                    <p className="user-card__link-text user-card__link-text--no-data">
-                      Not Available
-                    </p>
+                    <>
+                      <ImLocation
+                        className={
+                          isDark
+                            ? "user-card__link-icon no-data user-card__link-icon--pin dark"
+                            : "user-card__link-icon no-data user-card__link-icon--pin"
+                        }
+                      />
+                      <p className="user-card__link-text user-card__link-text--no-data">
+                        Not Available
+                      </p>
+                    </>
                   )}
                 </div>
                 <div className="user-card__link-box user-card__link-box--twitter">
-                  <BsTwitter
-                    className={
-                      isDark
-                        ? "user-card__link-icon user-card__link-icon--twitter dark"
-                        : "user-card__link-icon user-card__link-icon--twitter"
-                    }
-                  />
                   {data.twitter_username ? (
-                    <a
-                      href={`https://twitter.com/${data.twitter_username}`}
-                      className={
-                        isDark
-                          ? "user-card__link-text user-card__link-text--twitter dark"
-                          : "user-card__link-text user-card__link-text--twitter"
-                      }
-                    >
-                      {data.twitter_username}
-                    </a>
+                    <>
+                      <BsTwitter
+                        className={
+                          isDark
+                            ? "user-card__link-icon user-card__link-icon--twitter dark"
+                            : "user-card__link-icon user-card__link-icon--twitter"
+                        }
+                      />
+                      <a
+                        href={`https://twitter.com/${data.twitter_username}`}
+                        className={
+                          isDark
+                            ? "user-card__link-text user-card__link-text--twitter dark"
+                            : "user-card__link-text user-card__link-text--twitter"
+                        }
+                      >
+                        {data.twitter_username}
+                      </a>
+                    </>
                   ) : (
-                    <p className="user-card__link-text user-card__link-text--no-data">
-                      Not Available
-                    </p>
+                    <>
+                      <BsTwitter
+                        className={
+                          isDark
+                            ? "user-card__link-icon no-data user-card__link-icon--twitter dark"
+                            : "user-card__link-icon no-data user-card__link-icon--twitter"
+                        }
+                      />
+                      <p className="user-card__link-text user-card__link-text--no-data">
+                        Not Available
+                      </p>
+                    </>
                   )}
                 </div>
                 <div className="user-card__link-box user-card__link-box--github-url">
-                  <ImLink
-                    className={
-                      isDark
-                        ? "user-card__link-icon user-card__link-icon--link dark"
-                        : "user-card__link-icon user-card__link-icon--link"
-                    }
-                  />
                   {data.blog ? (
-                    <a
-                      href={data.blog}
-                      className={
-                        isDark
-                          ? "user-card__link-text user-card__link-text--github-url dark"
-                          : "user-card__link-text user-card__link-text--github-url"
-                      }
-                    >
-                      {data.login + "@blog"}
-                    </a>
+                    <>
+                      <ImLink
+                        className={
+                          isDark
+                            ? "user-card__link-icon user-card__link-icon--link dark"
+                            : "user-card__link-icon user-card__link-icon--link"
+                        }
+                      />
+                      <a
+                        href={data.blog}
+                        className={
+                          isDark
+                            ? "user-card__link-text user-card__link-text--github-url dark"
+                            : "user-card__link-text user-card__link-text--github-url"
+                        }
+                      >
+                        {data.login + "@blog"}
+                      </a>
+                    </>
                   ) : (
-                    <p className="user-card__link-text user-card__link-text--no-data">
-                      Not Available
-                    </p>
+                    <>
+                      <ImLink
+                        className={
+                          isDark
+                            ? "user-card__link-icon no-data user-card__link-icon--link dark"
+                            : "user-card__link-icon no-data user-card__link-icon--link"
+                        }
+                      />
+                      <p className="user-card__link-text user-card__link-text--no-data">
+                        Not Available
+                      </p>
+                    </>
                   )}
                 </div>
                 <div className="user-card__link-box user-card__link-box--github-username">

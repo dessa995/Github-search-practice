@@ -64,7 +64,12 @@ const Index = () => {
           setOpenReposPagePage={setOpenReposPagePage}
         />
       ) : (
-        <ReposPage data={data} reposData={reposData} />
+        <ReposPage
+          data={data}
+          reposData={reposData}
+          setOpenReposPagePage={setOpenReposPagePage}
+          isDark={isDark}
+        />
       )}
     </>
   );

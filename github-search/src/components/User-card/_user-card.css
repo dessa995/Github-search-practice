@@ -124,10 +124,18 @@
 
     & > .user-card__info-heading {
       color: #0079ff;
+
+      &.dark {
+        color: #90a4d4;
+      }
     }
 
     & > .user-card__info-number {
       color: #0079ff;
+
+      &.dark {
+        color: #90a4d4;
+      }
     }
   }
 }
@@ -183,6 +191,11 @@
   &.dark {
     color: #fff;
   }
+}
+
+.user-card__link-icon.no-data {
+  pointer-events: none;
+  opacity: 0.4;
 }
 
 .user-card__link-icon--office {

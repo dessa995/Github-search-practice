@@ -22,13 +22,87 @@
 .repos-page__heading {
   text-align: center;
   margin-bottom: 35px;
+
+  &.dark {
+    color: #fff;
+  }
 }
 
 .repos-page__list {
-  height: 135px;
+  height: 125px;
   padding: 15px 30px;
   overflow-y: scroll;
-  background-color: #f6f8ff;
   list-style: none;
   margin-bottom: 15px;
+  transition: 350ms ease-in-out;
+}
+
+.repos-page__list::-webkit-scrollbar {
+  width: 10px;
+}
+
+.repos-page__list::-webkit-scrollbar-track {
+  border-radius: 15px;
+  background-color: #f6f8ff;
+}
+
+.repos-page__list.dark::-webkit-scrollbar-track {
+  background-color: #141d2f;
+}
+
+.repos-page__list::-webkit-scrollbar-thumb {
+  border-radius: 15px;
+  background-color: #90a4d4;
+}
+
+.repos-page__list.dark::-webkit-scrollbar-thumb {
+  background-color: #fff;
+}
+
+.repos-page__list-item {
+  background-color: #f6f8ff;
+  margin: 10px 0;
+  padding: 0px 15px;
+  border-radius: 8px;
+
+  &.dark {
+    background-color: #141d2f;
+  }
+
+  & > a {
+    text-decoration: none;
+    color: #4b6a9b;
+    transition: 350ms ease-in-out;
+
+    &:hover {
+      color: #1e2a47;
+    }
+  }
+
+  &.dark > a {
+    color: #fff;
+
+    &:hover {
+      color: #90a4d4;
+    }
+  }
+}
+
+.repos-page__return-btn {
+  align-self: center;
+  width: 200px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  background-color: #0079ff;
+  color: #fff;
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  transition: 350ms ease-in-out;
+
+  &:hover {
+    background-color: #4b6a9b;
+    cursor: pointer;
+  }
 }
