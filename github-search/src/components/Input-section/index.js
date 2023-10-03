@@ -11,6 +11,8 @@ const Index = ({
   closeModal,
   modalIsOpen,
   modalContent,
+  getRepos,
+  setOpenReposPagePage,
 }) => {
   const [search, setSearch] = useState("");
 
@@ -24,7 +26,9 @@ const Index = ({
     e.preventDefault();
     getUser(search);
     setSearch("");
-    console.log(search);
+
+    // console.log(data);
+    // console.log(search);
   };
   return (
     <>
@@ -59,7 +63,16 @@ const Index = ({
           </button>
         </form>
       </section>
-      {data ? <SearchCard isDark={isDark} data={data} /> : ""}
+      {data ? (
+        <SearchCard
+          isDark={isDark}
+          data={data}
+          getRepos={getRepos}
+          setOpenReposPagePage={setOpenReposPagePage}
+        />
+      ) : (
+        ""
+      )}
     </>
   );
 };

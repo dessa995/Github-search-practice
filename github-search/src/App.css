@@ -2,6 +2,7 @@
 @import "./components/Home/_home.css";
 @import "./components/Input-section/_input-section.css";
 @import "./components/User-card/_user-card.css";
+@import "./components/Repos_page/_repos_page.css";
 
 body {
   background-color: #f6f8ff;

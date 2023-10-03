@@ -118,6 +118,18 @@
   &:last-of-type {
     padding-left: 18px;
   }
+
+  &.repos:hover {
+    cursor: pointer;
+
+    & > .user-card__info-heading {
+      color: #0079ff;
+    }
+
+    & > .user-card__info-number {
+      color: #0079ff;
+    }
+  }
 }
 
 .user-card__info-heading {

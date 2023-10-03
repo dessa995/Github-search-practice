@@ -3,7 +3,7 @@ import React from "react";
 import { RiMoonFill } from "react-icons/ri";
 import { BsFillSunFill } from "react-icons/bs";
 
-const Index = ({ isDark, setIsDark, setShowBlank, handleNavClick }) => {
+const Index = ({ isDark, setIsDark }) => {
   const toggleDark = () => {
     setIsDark(!isDark);
     document.body.classList.toggle("dark");
@@ -11,34 +11,6 @@ const Index = ({ isDark, setIsDark, setShowBlank, handleNavClick }) => {
   return (
     <>
       <header>
-        {/* <ul className="header__nav">
-          <li className="header__nav-item">
-            <button
-              type="button"
-              className={isDark ? "header__nav-btn dark" : "header__nav-btn"}
-              onClick={() => setShowBlank(false)}
-            >
-              Home
-            </button>
-          </li>
-          <li className="header__nav-item">
-            <button
-              type="button"
-              className={isDark ? "header__nav-btn dark" : "header__nav-btn"}
-              onClick={handleNavClick}
-            >
-              About
-            </button>
-          </li>
-          <li className="header__nav-item">
-            <button
-              type="button"
-              className={isDark ? "header__nav-btn dark" : "header__nav-btn"}
-            >
-              Contact
-            </button>
-          </li>
-        </ul> */}
         <section className="home-page-top">
           <div className="home-page-top__box">
             <h1

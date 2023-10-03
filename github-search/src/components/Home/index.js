@@ -1,16 +1,18 @@
-import { React, useState, useContext } from "react";
-import axios from "axios";
+import { React, useState, useEffect } from "react";
 
 import Header from "../Header";
 import InputSection from "../Input-section";
-import BlankPage from "../Blank-page";
+import ReposPage from "../Repos_page";
+
+// const DataContext = React.createContext();
 
 const Index = () => {
   const [isDark, setIsDark] = useState(false);
-  const [showBlank, setShowBlank] = useState(false);
   const [data, setData] = useState(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalContent, setModalContent] = useState("");
+  const [openReposPage, setOpenReposPagePage] = useState(false);
+  const [reposData, setReposData] = useState(null);
 
   const openModal = () => {
     setModalIsOpen(true);
@@ -20,33 +22,37 @@ const Index = () => {
     setModalIsOpen(false);
   };
 
-  const getUser = (username) => {
-    axios
-      .get(`https://api.github.com/users/${username.trim()}`)
+  const getUser = async (username) => {
+    const response = await fetch(
+      `https://api.github.com/users/${username.trim()}`
+    )
       .then((response) => {
-        setData(response.data);
+        return response.json();
       })
       .catch((error) => {
         console.log(error);
         setModalContent("No Results");
         openModal();
       });
+    setData(response);
   };
 
-  const handleNavClick = () => {
-    setShowBlank(true);
-    console.log("show blank is " + showBlank);
+  const getRepos = async () => {
+    const repos = await fetch(data.repos_url).then((response) => {
+      return response.json();
+    });
+    setReposData(repos);
   };
+
+  useEffect(() => {
+    getUser("octocat");
+  }, []);
 
   return (
     <>
-      <Header
-        isDark={isDark}
-        setIsDark={setIsDark}
-        setShowBlank={setShowBlank}
-        handleNavClick={handleNavClick}
-      />
-      {!showBlank ? (
+      <Header isDark={isDark} setIsDark={setIsDark} />
+
+      {!openReposPage ? (
         <InputSection
           isDark={isDark}
           getUser={getUser}
@@ -54,9 +60,11 @@ const Index = () => {
           modalIsOpen={modalIsOpen}
           modalContent={modalContent}
           closeModal={closeModal}
+          getRepos={getRepos}
+          setOpenReposPagePage={setOpenReposPagePage}
         />
       ) : (
-        <BlankPage />
+        <ReposPage reposData={reposData} />
       )}
     </>
   );

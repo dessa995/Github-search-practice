@@ -5,7 +5,7 @@ import { ImLocation, ImLink } from "react-icons/im";
 import { BsTwitter } from "react-icons/bs";
 import { HiMiniBuildingOffice2 } from "react-icons/hi2";
 
-const Index = ({ isDark, data }) => {
+const Index = ({ isDark, data, getRepos, setOpenReposPagePage }) => {
   const githubDate = new Date(data.created_at);
   const createdAt = `${githubDate.getDate()} ${githubDate.toLocaleString(
     "default",
@@ -13,7 +13,11 @@ const Index = ({ isDark, data }) => {
       month: "short",
     }
   )} ${githubDate.getFullYear()}`;
-  // console.log(createdAt);
+
+  const openReposPage = async () => {
+    getRepos();
+    setOpenReposPagePage(true);
+  };
 
   return (
     <>
@@ -69,7 +73,10 @@ const Index = ({ isDark, data }) => {
                     : "user-card__file-info-box"
                 }
               >
-                <div className="user-card__user-info-box">
+                <div
+                  className="user-card__user-info-box repos"
+                  onClick={openReposPage}
+                >
                   <h3
                     className={
                       isDark
