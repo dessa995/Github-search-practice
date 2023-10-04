@@ -5,7 +5,7 @@ import { ImLocation, ImLink } from "react-icons/im";
 import { BsTwitter } from "react-icons/bs";
 import { HiMiniBuildingOffice2 } from "react-icons/hi2";
 
-const Index = ({ isDark, data, getRepos, setOpenReposPagePage }) => {
+const Index = ({ isDark, data, getRepos, setOpenReposPage }) => {
   const githubDate = new Date(data.created_at);
   const createdAt = `${githubDate.getDate()} ${githubDate.toLocaleString(
     "default",
@@ -16,7 +16,7 @@ const Index = ({ isDark, data, getRepos, setOpenReposPagePage }) => {
 
   const openReposPage = async () => {
     getRepos();
-    setOpenReposPagePage(true);
+    setOpenReposPage(true);
   };
 
   return (

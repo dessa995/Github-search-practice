@@ -1,6 +1,19 @@
 import React from "react";
 
-const Index = ({ data, reposData, setOpenReposPagePage, isDark }) => {
+const Index = ({
+  data,
+  reposData,
+  setOpenReposPage,
+  isDark,
+  setShowSingleRepo,
+  setRepo,
+}) => {
+  const handleRepoClick = (repo) => {
+    setOpenReposPage(false);
+    setShowSingleRepo(true);
+    setRepo(repo);
+  };
+
   return (
     <section className="repos-page">
       <div
@@ -25,9 +38,17 @@ const Index = ({ data, reposData, setOpenReposPagePage, isDark }) => {
                       : "repos-page__list-item dark"
                   }
                 >
-                  <a href={repo.html_url} target="_blank">
-                    {repo.name}
-                  </a>
+                  <p>{repo.name}</p>
+                  <button
+                    className={
+                      !isDark
+                        ? "repos-page__list-item-btn"
+                        : "repos-page__list-item-btn dark"
+                    }
+                    onClick={() => handleRepoClick(repo)}
+                  >
+                    More Data
+                  </button>
                 </li>
               );
             })
@@ -46,7 +67,7 @@ const Index = ({ data, reposData, setOpenReposPagePage, isDark }) => {
             !isDark ? "repos-page__return-btn" : "repos-page__return-btn dark"
           }
           onClick={() => {
-            setOpenReposPagePage(false);
+            setOpenReposPage(false);
           }}
         >
           Back

@@ -12,7 +12,7 @@ const Index = ({
   modalIsOpen,
   modalContent,
   getRepos,
-  setOpenReposPagePage,
+  setOpenReposPage,
 }) => {
   const [search, setSearch] = useState("");
 
@@ -68,7 +68,7 @@ const Index = ({
           isDark={isDark}
           data={data}
           getRepos={getRepos}
-          setOpenReposPagePage={setOpenReposPagePage}
+          setOpenReposPage={setOpenReposPage}
         />
       ) : (
         ""

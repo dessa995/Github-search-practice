@@ -3,6 +3,7 @@
 @import "./components/Input-section/_input-section.css";
 @import "./components/User-card/_user-card.css";
 @import "./components/repos_page/_repos_page.css";
+@import "./components/Single-repo/_single-repo.css";
 
 body {
   background-color: #f6f8ff;
@@ -11,6 +12,14 @@ body {
   &.dark {
     background-color: #141d2f;
   }
+}
+
+.clipboard-notification {
+  position: absolute;
+  background-color: #f6f8ff;
+  color: #0079ff;
+  font-size: 15px;
+  max-width: 100px;
 }
 
 @media only screen and (min-width: 769px) {

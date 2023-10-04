@@ -3,6 +3,7 @@ import { React, useState, useEffect } from "react";
 import Header from "../Header";
 import InputSection from "../Input-section";
 import ReposPage from "../repos_page";
+import SingleRepo from "../Single-repo";
 
 // const DataContext = React.createContext();
 
@@ -11,8 +12,10 @@ const Index = () => {
   const [data, setData] = useState(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
   const [modalContent, setModalContent] = useState("");
-  const [openReposPage, setOpenReposPagePage] = useState(false);
+  const [openReposPage, setOpenReposPage] = useState(false);
   const [reposData, setReposData] = useState(null);
+  const [showSingleRepo, setShowSingleRepo] = useState(false);
+  const [repo, setRepo] = useState(null);
 
   const openModal = () => {
     setModalIsOpen(true);
@@ -52,7 +55,7 @@ const Index = () => {
     <>
       <Header isDark={isDark} setIsDark={setIsDark} />
 
-      {!openReposPage ? (
+      {!openReposPage && !showSingleRepo ? (
         <InputSection
           isDark={isDark}
           getUser={getUser}
@@ -61,14 +64,25 @@ const Index = () => {
           modalContent={modalContent}
           closeModal={closeModal}
           getRepos={getRepos}
-          setOpenReposPagePage={setOpenReposPagePage}
+          setOpenReposPage={setOpenReposPage}
+        />
+      ) : showSingleRepo ? (
+        <SingleRepo
+          isDark={isDark}
+          repo={repo}
+          setOpenReposPage={setOpenReposPage}
+          setShowSingleRepo={setShowSingleRepo}
         />
       ) : (
         <ReposPage
           data={data}
           reposData={reposData}
-          setOpenReposPagePage={setOpenReposPagePage}
+          setOpenReposPage={setOpenReposPage}
           isDark={isDark}
+          showSingleRepo={showSingleRepo}
+          setShowSingleRepo={setShowSingleRepo}
+          repo={repo}
+          setRepo={setRepo}
         />
       )}
     </>

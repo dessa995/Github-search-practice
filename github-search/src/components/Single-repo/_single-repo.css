@@ -1,0 +1,136 @@
+.single-repo-page {
+  padding-right: 9px;
+}
+
+.single-repo-page__wrapper {
+  width: 730px;
+  margin: 20px auto;
+  display: flex;
+  padding: 46px 47px 40px;
+  background-color: #fefefe;
+  border-radius: 15px;
+  transition: 350ms ease-in-out;
+  -webkit-box-shadow: 0px 7px 36px -21px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 0px 7px 36px -21px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 7px 36px -21px rgba(0, 0, 0, 0.5);
+
+  &.dark {
+    background-color: #1e2a47;
+  }
+}
+
+.single-repo-page__img-box {
+  margin-right: 35px;
+
+  & > img {
+    border-radius: 100%;
+    max-width: 177px;
+    max-height: 117px;
+  }
+}
+
+.single-repo-page__repo-data-box {
+  display: flex;
+  flex-direction: column;
+  width: 77%;
+}
+
+.single-repo-page__repo-info-box {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.single-repo-page__repo-heading {
+  font-size: 24px;
+  margin-top: -2px;
+  letter-spacing: 0.9px;
+  transition: 350ms ease-in-out;
+
+  &.dark {
+    color: #fff;
+  }
+}
+
+.single-repo-page__repo-date {
+  font-size: 15px;
+  color: #697c9a;
+  letter-spacing: -0.2px;
+  margin-left: -27px;
+  transition: 350ms ease-in-out;
+
+  &.dark {
+    color: #fff;
+  }
+}
+
+.single-repo-page__repo-url-box {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+
+  & > .clipboard-notification {
+    top: 1px;
+    left: 120px;
+  }
+}
+
+.single-repo-page__repo-clone-url {
+  color: #0079ff;
+  text-decoration: none;
+  transition: 350ms ease-in-out;
+
+  &:hover {
+    color: #4b6a9b;
+    cursor: pointer;
+  }
+}
+
+.single-repo-page__repo-open-url {
+  color: #4b6a9b;
+  text-decoration: none;
+  transition: 350ms ease-in-out;
+
+  &:hover {
+    color: #0079ff;
+    cursor: pointer;
+  }
+}
+
+.single-repo-page__description-box {
+  width: 100%;
+  border-radius: 8px;
+  background-color: #f6f8ff;
+  padding: 15px;
+  margin-bottom: 20px;
+  transition: 350ms ease-in-out;
+
+  &.dark {
+    background-color: #141d2f;
+  }
+}
+
+.single-repo-page__description-text {
+  font-size: 16px;
+  color: #4b6a9b;
+}
+
+.single-repo-page__return-btn {
+  align-self: center;
+  width: 200px;
+  height: 40px;
+  border-radius: 8px;
+  border: none;
+  background-color: #0079ff;
+  color: #fff;
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  transition: 350ms ease-in-out;
+
+  &:hover {
+    background-color: #4b6a9b;
+    cursor: pointer;
+  }
+}
