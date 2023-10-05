@@ -3,8 +3,10 @@
 }
 
 .single-repo-page__wrapper {
-  width: 730px;
-  margin: 20px auto;
+  max-width: 730px;
+  width: 100%;
+  height: 412px;
+  margin: 20px auto 80px;
   display: flex;
   padding: 46px 47px 40px;
   background-color: #fefefe;
@@ -24,7 +26,7 @@
 
   & > img {
     border-radius: 100%;
-    max-width: 177px;
+    max-width: 117px;
     max-height: 117px;
   }
 }
@@ -100,15 +102,39 @@
 
 .single-repo-page__description-box {
   width: 100%;
+  max-height: 200px;
   border-radius: 8px;
   background-color: #f6f8ff;
   padding: 15px;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
   transition: 350ms ease-in-out;
+  overflow: auto;
 
   &.dark {
     background-color: #141d2f;
   }
+}
+
+.single-repo-page__description-box::-webkit-scrollbar {
+  width: 10px;
+}
+
+.single-repo-page__description-box::-webkit-scrollbar-track {
+  border-radius: 15px;
+  background-color: #f6f8ff;
+}
+
+.single-repo-page__description-box.dark::-webkit-scrollbar-track {
+  background-color: #141d2f;
+}
+
+.single-repo-page__description-box::-webkit-scrollbar-thumb {
+  border-radius: 15px;
+  background-color: #90a4d4;
+}
+
+.single-repo-page__description-box.dark::-webkit-scrollbar-thumb {
+  background-color: #fff;
 }
 
 .single-repo-page__description-text {
@@ -132,5 +158,39 @@
   &:hover {
     background-color: #4b6a9b;
     cursor: pointer;
+  }
+}
+
+
+@media only screen and (min-width: 611px) and (max-width: 1200px) {
+  .single-repo-page__wrapper{
+    max-width: 580px;
+  }
+}
+
+@media only screen and (max-width: 610px) {
+  .single-repo-page__wrapper{
+    position: relative;
+    max-width: 327px;
+    padding: 26px 17px 20px;
+  }
+  
+  .single-repo-page__img-box {
+    position: absolute;
+    top: 26px;
+    left: 17px;
+    
+    & > img {
+      max-width: 80px;
+    }
+  }
+  
+  .single-repo-page__repo-info-box {
+    flex-direction: column;
+    margin-left: 85px;
+  }
+  
+  .single-repo-page__repo-date {
+    margin-left: 0;
   }
 }
