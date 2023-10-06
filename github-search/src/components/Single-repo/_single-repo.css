@@ -185,12 +185,45 @@
     }
   }
   
+  .single-repo-page__repo-data-box{
+    width: 100%;
+  }
+  
   .single-repo-page__repo-info-box {
     flex-direction: column;
     margin-left: 85px;
   }
   
+  .single-repo-page__repo-heading{
+    font-size: 20px;
+  }
+  
   .single-repo-page__repo-date {
     margin-left: 0;
+    font-size: 14px;
+  }
+  
+  .single-repo-page__repo-url-box{
+    margin: 10px 0;
+    padding: 15px;
+  }
+  
+  .single-repo-page__repo-clone-url{
+    font-size: 14px;
+  }
+  
+  .single-repo-page__repo-open-url{
+    font-size: 14px;
+    text-align: end;
+  }
+  
+  .single-repo-page__description-text {
+    font-size: 14px;
+  }
+  
+  .single-repo-page__return-btn {
+    font-size: 15px;
+    width: 150px;
+    letter-spacing: normal;
   }
 }
