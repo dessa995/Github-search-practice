@@ -15,13 +15,10 @@ const Index = ({ isDark, repo, setOpenReposPage, setShowSingleRepo }) => {
 
   const cloneUrl = () => {
     const value = data.clone_url;
-    console.log(value);
     setShowClipboardModal(true);
     navigator.clipboard
       .writeText(value)
-      .then(() => {
-        console.log("copied! " + value);
-      })
+      .then(() => {})
       .catch((error) => {
         console.log("not copied " + error);
       });
@@ -100,7 +97,7 @@ const Index = ({ isDark, repo, setOpenReposPage, setShowSingleRepo }) => {
             >
               Clone repo
             </p>
-            {showClipboardModal ? <ClipboardModal /> : ""}
+            {showClipboardModal ? <ClipboardModal isDark={isDark} /> : ""}
             <a
               href={data.html_url}
               className={
@@ -152,8 +149,16 @@ const Index = ({ isDark, repo, setOpenReposPage, setShowSingleRepo }) => {
   );
 };
 
-const ClipboardModal = () => {
-  return <div className="clipboard-notification">coppied to clipboard!</div>;
+const ClipboardModal = ({ isDark }) => {
+  return (
+    <div
+      className={
+        !isDark ? "clipboard-notification" : "clipboard-notification dark"
+      }
+    >
+      coppied to clipboard!
+    </div>
+  );
 };
 
 export default Index;

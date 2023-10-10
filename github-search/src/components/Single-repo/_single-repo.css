@@ -1,11 +1,11 @@
 .single-repo-page {
   padding-right: 9px;
+  height: 412px;
 }
 
 .single-repo-page__wrapper {
   max-width: 730px;
   width: 100%;
-  height: 412px;
   margin: 20px auto 80px;
   display: flex;
   padding: 46px 47px 40px;
@@ -45,6 +45,7 @@
 
 .single-repo-page__repo-heading {
   font-size: 24px;
+  max-width: 150px;
   margin-top: -2px;
   letter-spacing: 0.9px;
   transition: 350ms ease-in-out;
@@ -102,6 +103,7 @@
 
 .single-repo-page__description-box {
   width: 100%;
+  min-height: 130px;
   max-height: 200px;
   border-radius: 8px;
   background-color: #f6f8ff;
@@ -161,66 +163,65 @@
   }
 }
 
-
 @media only screen and (min-width: 611px) and (max-width: 1200px) {
-  .single-repo-page__wrapper{
+  .single-repo-page__wrapper {
     max-width: 580px;
   }
 }
 
 @media only screen and (max-width: 610px) {
-  .single-repo-page__wrapper{
+  .single-repo-page__wrapper {
     position: relative;
     max-width: 327px;
     padding: 26px 17px 20px;
   }
-  
+
   .single-repo-page__img-box {
     position: absolute;
     top: 26px;
     left: 17px;
-    
+
     & > img {
       max-width: 80px;
     }
   }
-  
-  .single-repo-page__repo-data-box{
+
+  .single-repo-page__repo-data-box {
     width: 100%;
   }
-  
+
   .single-repo-page__repo-info-box {
     flex-direction: column;
     margin-left: 85px;
   }
-  
-  .single-repo-page__repo-heading{
+
+  .single-repo-page__repo-heading {
     font-size: 20px;
   }
-  
+
   .single-repo-page__repo-date {
     margin-left: 0;
     font-size: 14px;
   }
-  
-  .single-repo-page__repo-url-box{
+
+  .single-repo-page__repo-url-box {
     margin: 10px 0;
     padding: 15px;
   }
-  
-  .single-repo-page__repo-clone-url{
+
+  .single-repo-page__repo-clone-url {
     font-size: 14px;
   }
-  
-  .single-repo-page__repo-open-url{
+
+  .single-repo-page__repo-open-url {
     font-size: 14px;
     text-align: end;
   }
-  
+
   .single-repo-page__description-text {
     font-size: 14px;
   }
-  
+
   .single-repo-page__return-btn {
     font-size: 15px;
     width: 150px;

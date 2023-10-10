@@ -20,6 +20,18 @@ body {
   color: #0079ff;
   font-size: 15px;
   max-width: 100px;
+  padding: 4px;
+  border-radius: 6px;
+  transition: 350ms ease-in-out;
+
+  -webkit-box-shadow: 5px 5px 14px -8px rgba(0, 0, 0, 0.5);
+  -moz-box-shadow: 5px 5px 14px -8px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 14px -8px rgba(0, 0, 0, 0.5);
+
+  &.dark {
+    background-color: #141d2f;
+    color: #4b6a9b;
+  }
 }
 
 @media only screen and (min-width: 769px) {
